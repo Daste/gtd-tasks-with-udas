@@ -25,7 +25,7 @@ The imbox should be frequently processed, and the stuff should be either:
 We introduce a user defined attribute (UDA) called "gtd-type" with the following values:
 - ```inbox```
 - ```action```
-- ```waiting-for```
+- ```awaiting```
 - ```maybe```
 
 project are handled with the built in project attribute
@@ -34,7 +34,7 @@ deferral is handled with the built in scheduled attribute
 
 dependency between tasks is handled with the built in depends attribute
 
-waiting-for represents an external event we are waiting for, like an email reply or a package delivery, so that other task might be blocked by it
+awaiting represents an external event we are waiting for, like an email reply or a package delivery, so that other task might be blocked by it
 maybe represents a task that is not relevant now but might be in the future
 
 We dont implement a storage system.
@@ -44,7 +44,7 @@ The ```inbox``` report shows all the tasks with gtd-type:inbox
 
 The ```next``` report is customized to show only unblocked tasks  with gtd-type:action and after their scheduled date
 
-The ```waiting-for``` report shows all the tasks with gtd-type:waiting-for
+The ```awaiting``` report shows all the tasks with gtd-type:awaiting
 
 The ```maybe``` report shows all the tasks with gtd-type:maybe
 ### Commands
@@ -52,7 +52,7 @@ The ```tin``` command is a wrapper around the add command that sets the gtd-type
 
 The ```tdo``` command is a wrapper around the add command that sets the gtd-type:action attribute
 
-The ```twait``` command is a wrapper around the add command that sets the gtd-type:waiting-for attribute
+The ```twait``` command is a wrapper around the add command that sets the gtd-type:awaiting attribute
 
 The ```tmaybe``` command is a wrapper around the add command that sets the gtd-type:maybe attribute
 
